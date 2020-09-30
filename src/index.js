@@ -17,7 +17,7 @@ function md(options) {
     function visitor(node, index, parent) {
       if (node.type === "tableRow" && index === 0) {
         // thead
-        headers = node.children.map(header => header.children[0].value);
+        headers = node.children.map(header => typeof header.children[0] !== 'undefined' ? header.children[0].value : '');
       }
 
       // tbody rows
